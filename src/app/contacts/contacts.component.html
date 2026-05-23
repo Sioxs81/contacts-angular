@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Libreta de Contactos</h1>
+
+  <div *ngIf="loading" class="loading">Cargando contactos...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <table *ngIf="!loading && !error">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.id }}</td>
+        <td>{{ contact.nombre }}</td>
+        <td>{{ contact.telefono }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
